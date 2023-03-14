@@ -16,6 +16,11 @@ export default function QueryProcessor(query: string): string {
     const int1 = parseInt(query.substr(queryLen - 11, queryLen - 10));
     const int2 = parseInt(query.substr(queryLen - 7, queryLen - 6));
     const int3 = parseInt(query.substr(queryLen - 3, queryLen - 2));
+
+    // const int1 = query.split(" ");
+    // const int2 = query.split(" ");
+    // const int3 = query.split(" ");
+
     return (Math.max(int1, int2, int3)).toString();
   }
 
@@ -26,5 +31,21 @@ export default function QueryProcessor(query: string): string {
     return (int1+int2).toString();
   }
 
+  if (query.toLowerCase().includes("cube")) {
+    const numlist = query.split(" ");
+    const returnArr:number[] = [];
+    for (let i = 12; i < 18; i++) {
+      if (Math.sqrt(parseInt(numlist[i])) % 1 === 0) {
+        if (Math.cbrt(parseInt(numlist[i])) % 1 === 0) {
+          returnArr.push();
+        }
+      }
+    }
+    return returnArr.toString();
+  }
+
   return "";
 }
+
+
+
