@@ -44,6 +44,13 @@ export default function QueryProcessor(query: string): string {
     return returnArr.toString();
   }
 
+  if (query.toLowerCase().includes("multi")) {
+    const numlist = query.split(" ");
+    const int1 = parseInt(numlist[2]);
+    const int2 = parseInt(numlist[5]);
+    return (int1 * int2).toString();
+  }
+
   return "";
 }
 
