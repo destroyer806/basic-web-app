@@ -11,7 +11,7 @@ export default function QueryProcessor(query: string): string {
     return ("Ryan2");
   }
 
-  if (query.toLowerCase().includes("which of the following numbers is the largest")) {
+  if (query.toLowerCase().includes("largest")) {
     const queryLen = query.length;
     const int1 = parseInt(query.substr(queryLen - 11, queryLen - 10));
     const int2 = parseInt(query.substr(queryLen - 7, queryLen - 6));
@@ -49,6 +49,13 @@ export default function QueryProcessor(query: string): string {
     const int1 = parseInt(numlist[2]);
     const int2 = parseInt(numlist[5]);
     return (int1 * int2).toString();
+  }
+
+  if (query.toLowerCase().includes("minus")) {
+    const numlist = query.split(" ");
+    const int1 = parseInt(numlist[2]);
+    const int2 = parseInt(numlist[4]);
+    return (int1 - int2).toString();
   }
 
   return "";
