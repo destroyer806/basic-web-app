@@ -11,5 +11,13 @@ export default function QueryProcessor(query: string): string {
     return ("Ryan2");
   }
 
+  if (query.toLowerCase().includes("which of the following numbers is the largest")) {
+    const queryLen = query.length;
+    const int1 = parseInt(query.substr(queryLen - 11, queryLen - 10));
+    const int2 = parseInt(query.substr(queryLen - 7, queryLen - 6));
+    const int3 = parseInt(query.substr(queryLen - 3, queryLen - 2));
+    return (Math.max(int1, int2, int3)).toString();
+  }
+
   return "";
 }
