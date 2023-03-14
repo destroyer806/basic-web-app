@@ -1,4 +1,4 @@
-name: Vercel Deployment
+name: Vercel Test Deployment
 
 on:
 
@@ -10,11 +10,11 @@ branches:
 
 jobs:
 
-Deploy-Preview:
+Deploy-Test:
 
 runs-on: ubuntu-latest
 
-name: Use webapp
+name: Run lint and test
 
 steps:
 
